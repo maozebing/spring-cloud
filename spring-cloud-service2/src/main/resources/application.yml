@@ -1,0 +1,16 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: service2-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: service2-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/

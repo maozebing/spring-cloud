@@ -1,0 +1,36 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: service1-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: service1-server
+  swagger:
+    enabled: true
+    title: API文档
+    description: API文档
+    version: V1.0
+    contact:
+      name: MZB
+    base-package: com.example.service1
+    #全局参数,比如Token之类的验证信息可以全局话配置
+    #global-operation-parameters:
+     # - description: 'Token信息,必填项'
+      #  modelRef: 'string'
+       # name: 'Authorization'
+        #parameter-type: 'header'
+        #required: true
+    #groups:
+     # basic-group:
+      #  base-package: com.example.service1
+     # system-group:
+      #  base-package: com.example.service1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/
